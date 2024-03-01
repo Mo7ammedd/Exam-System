@@ -1,5 +1,4 @@
 # Exam-System
-# Examination System Database Project
 
 ## Overview
 The Examination System Database Project is a comprehensive solution designed to streamline examination processes within educational institutions. It offers functionalities to manage student registrations, exam scheduling, grading, and result management efficiently.
@@ -41,4 +40,4 @@ The database schema consists of several tables to organize and manage data effec
 [![License](https://img.shields.io/:License-MIT-blue.svg?style=flat-square)](http://badges.mit-license.org)
 - MIT License
 - [Mohammed Mostafa](https://github.com/mo7ammedd)
-- [Omar Mohammed](https://github.com/ola-elnakeib)
+- [Omar Mohammed](https://github.com/omarmohamedpt)

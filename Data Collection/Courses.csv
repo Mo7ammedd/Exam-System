@@ -1,0 +1,35 @@
+,name,Description,MinDegree,MaxDegree,ins id,min of Questions
+1,OOP using C#,OOP concepts in C#,30,50,1,30
+2,HTML,HTML for web development,21,35,1,15
+3,CSS,CSS for designing web pages,21,35,2,15
+4,Bootstrap,Bootstrap for responsive web development,24,40,3,20
+5,HTML5 & CSS3,HTML5 & CSS3 for responsive web design,24,40,4,20
+6,Java Script,fundamentals of dynamic web development,30,50,5,30
+7,SQL Server Programming,Develop expertise in database programming,30,50,6,30
+8,ES Next,version of ECMAScript,21,35,11,15
+9,Angular,framework for building web applications,24,40,7,20
+10,ASP. Net MVC Core,web development framework,30,50,8,30
+11,ASP. Net Web API,,30,50,15,30
+12,OOP using Python,OOP concepts in Python,24,40,12,20
+13,Django,web framework for building web apps,21,35,10,15
+14,JQuery,JavaScript library,27,45,9,25
+15,UX/UI design basics,fundamentals of UI and UX design,24,40,20,20
+16,PostgreSQL Database,open-source relational database,30,50,18,30
+17,Node.js,JavaScript runtime environment,30,50,16,30
+18,MongoDB,NoSQL database,27,45,13,25
+19,React.js,JavaScript library,27,45,14,25
+20,Unit Testing,process of testing,21,35,30,15
+21,PHP,server-side scripting language,30,50,21,30
+22,MYSQL Database,MySQL relational database,24,40,19,20
+23,Operating Systems,concepts of operating systems,24,40,25,20
+24,Computer Networks,protocols of computer networks,24,40,27,20
+25,Software Engineering,software development life cycle,30,50,33,30
+26,OOP using C++,OOP concepts in C#,27,45,24,25
+27,Data Structures,fundamental data structures and algorithms,21,35,35,15
+28,software testing Techniques,software testing process,27,45,26,25
+29,Effective Test case and bug,write effective test cases and bug reports,24,40,29,20
+30,Software Configuration,concepts of software configuration management,21,35,45,15
+31,Oracle SQL,database query language,30,50,40,30
+32,Analysis and Visualizations using Python,practice of data analysis and visualization using Python,24,40,39,20
+33,Data Analysis using Excel,"use Excel, to perform data analysis and visualization",24,40,37,20
+34,Data Analysis using Power BI,"use Power BI, to create interactive reports and dashboards",24,40,44,20

@@ -1,5 +1,5 @@
 # Exam-Systemm
-  m
+  
 ## Overview
 The Examination System Database Project is a comprehensive solution designed to streamline examination processes within educational institutions. It offers functionalities to manage student registrations, exam scheduling, grading, and result management efficiently.
 

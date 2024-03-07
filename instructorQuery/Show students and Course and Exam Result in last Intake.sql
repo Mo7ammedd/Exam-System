@@ -27,10 +27,10 @@ FROM Student S
     JOIN Course C ON C.Crs_Id = SC.Course_Id
     JOIN Instructor I ON I.Ins_Id = C.Ins_Id
     JOIN Intake IT ON IT.Intake_Id = S.Intake_Id
-WHERE I.Ins_Id = @ins_id
+    WHERE I.Ins_Id = @ins_id
     AND S.Intake_Id = @Intake_Id
     AND C.Crs_Name = @Course_Name
-ORDER BY StudentName; -- Add a suitable column for ordering
+    ORDER BY StudentName;
 
 
     END

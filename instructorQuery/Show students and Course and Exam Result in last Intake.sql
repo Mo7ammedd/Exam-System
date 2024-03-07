@@ -1,39 +1,46 @@
 --Show students and Course and Exam Result in last Intake
-create or alter proc ShowStudentsCourse @ins_id int,@Course_Name nvarchar(50)
-as
-begin
+CREATE OR ALTER PROCEDURE ShowStudentsCourse
+    @ins_id INT,
+    @Course_Name NVARCHAR(50)
+AS
+BEGIN
+    IF EXISTS (SELECT *
+               FROM Course
+               WHERE Crs_Name = @Course_Name
+                 AND Ins_Id = @ins_id)
+    BEGIN
+        DECLARE @Intake_Id INT
+        SELECT @Intake_Id = MAX(Intake_Id)
+        FROM Intake
 
-	IF EXISTS(SELECT * FROM     Course   
-	   WHERE   Crs_Name   = @Course_Name
-	   and  Ins_Id  =@ins_id )
-	BEGIN
-		begin
-		declare @Intake_Id int
-		select @Intake_Id=max(  Intake_Id  ) from     Intake  
+    SELECT
+    Ins_Name AS InstructorName,
+    C.Crs_Name AS CourseName,
+    COALESCE(S.Std_Fname + ' ' + S.Std_Lname, 'Student not found') AS StudentName,
+    CASE
+        WHEN Status IS NULL THEN 'Not taken yet.'
+        ELSE Status
+    END AS Status,
+    IT.Intake_Name
+FROM Student S
+    JOIN Student_Course SC ON SC.Student_Id = S.Std_Id
+    JOIN Course C ON C.Crs_Id = SC.Course_Id
+    JOIN Instructor I ON I.Ins_Id = C.Ins_Id
+    JOIN Intake IT ON IT.Intake_Id = S.Intake_Id
+WHERE I.Ins_Id = @ins_id
+    AND S.Intake_Id = @Intake_Id
+    AND C.Crs_Name = @Course_Name
+ORDER BY StudentName; -- Add a suitable column for ordering
 
-			select 
-				  Ins_Name   as   InstructorName  ,
-				C.Crs_Name as   CourseName  ,
-				CONCAT(S.Std_Fname , ' ' , S.Std_Lname) as   Studentname  ,
-				  Status   = case when   Status   is null then 'Not taken yet.' else    Status   end,
-				IT.  Intake_Name  
-			from   student   S
-			join  Student_Course   SC on SC.Student_Id = S.Std_Id
-			join  Course   C on C.Crs_Id = SC.Course_Id
-			join  Instructor   I on I.Ins_Id = C.Ins_Id
-			join  Intake   IT on IT.Intake_Id = S.Intake_Id
 
-			where I.Ins_Id = @ins_id and S.Intake_Id = @Intake_Id  and C.Crs_Name = @Course_Name
-
-		end
-	end
-	else 
-	begin
-
+    END
+    ELSE
+    BEGIN
 		RAISERROR ('Instructor Id and Course Name or does not exist' ,10,1)
-	end
-end
+    END
+END
 
 
 
-exec ShowStudentsCourse 44,'Data Analysis using Power BI'
+
+exec ShowStudentsCourse 2,'CSS'

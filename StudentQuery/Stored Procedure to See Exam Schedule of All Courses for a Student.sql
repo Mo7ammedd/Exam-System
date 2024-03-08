@@ -1,5 +1,5 @@
 -- Stored Procedure to See Exam Schedule of All Courses for a Student
-GO
+
 CREATE OR ALTER PROCEDURE SeeExamesScheduleOfAllCourses 
     @St_Id INT
 AS
@@ -31,7 +31,7 @@ BEGIN
         END
         ELSE
         BEGIN
-            RAISERROR('Access denied, you do not have permission', 10, 1)
+            RAISERROR('Sdudent doesnot take any exam yet', 10, 1)
         END
     END
     ELSE 
@@ -42,7 +42,7 @@ END
 
 
 
-EXEC SeeExamesScheduleOfAllCourses 451
+EXEC SeeExamesScheduleOfAllCourses 1
 ---nvalid Student - Student Does Not Exist
 EXEC SeeExamesScheduleOfAllCourses 600
 
